@@ -1,20 +1,52 @@
-## 이 글을 읽는 사람들에게
 
-일단 images랑 annotations는 짝궁이라고 생각하고 순서대로 배열되있는 거임
+## 📂 Folder Structure
+- `images/` : Input images (e.g., `1.jpg`, `2.jpg`, ...)
+- `annotations/` : Corresponding labels for each image (e.g., `1.txt`, `2.txt`, ...)
+- `training/` : Used for training the model
+- `eval/` : Used to test the trained model with new images
+- Other folders/files are experimental and can be ignored.
 
-1번이미지의 라벨링이 어노테이션 폴더의 1번 파일인 느낌
+**📝 Note:** Each image in the `images/` folder has a matching annotation file in the `annotations/` folder. For example, `1.jpg` corresponds to `1.txt`.
 
-일단 주목할건 training이랑 eval 이 두개만 생각하고
+---
 
-나머지 잡다한 것들은 내가 뭐 여러가지 시도하다가 실패한 그런 것들이니 신경 ㄴㄴ
+## 🚀 How to Use
+
+1. **Train the Model**
+   - Run the training script inside the `training/` directory.
+   - After training completes, a file named like `p.._d..._model.pth` (the trained weights) will be generated.
+
+2. **Evaluate the Model**
+   - Go to the `eval/` folder.
+   - Provide the image you want to test as input.
+   - The script will load the trained weights and display the results.
+
+3. 🎉 **See the Results**
+   - The output with the model's predictions will be shown after evaluation.
+
+---
 
 
-대충 이런느낌
+## 📂 폴더 구조
+- `images/` : 입력 이미지들 (`1.jpg`, `2.jpg`, ...)
+- `annotations/` : 각 이미지에 해당하는 라벨 파일 (`1.txt`, `2.txt`, ...)
+- `training/` : 모델 학습용 디렉토리
+- `eval/` : 학습된 모델을 테스트하는 디렉토리
+- 그 외 폴더/파일들은 테스트 중 생성된 것이므로 무시해도 됩니다.
 
-1. training을 돌린다 (여기서 gpu 드라이버 뭐시기 설치 안되있으면 cpu써서 돌리고 컴퓨터 가혹행위 하니깐 그냥 있는 모델 쓰셈)
+**📝 참고:** `images/` 폴더의 각 이미지와 `annotations/` 폴더의 라벨 파일은 번호 순서대로 1:1로 매칭됩니다. 예: `1.jpg` ↔ `1.txt`
 
-2. 여기서 training 돌리면 p.._d..._model.pth 파일이 생성이 됨 이게 가중치 파일임 (이미 잘 작동하는 가중치 파일 하나 있으니 그거 그냥 쓰셈 학습하면 개오래 걸림)
+---
 
-3. eval로 이미지 인풋에 원하는 이미지를 넣고 결과를 확인한다 
+## 🚀 사용 방법
 
-4. 짜잔 결과가 나왔어요!
+1. **모델 학습**
+   - `training/` 디렉토리에서 학습 스크립트를 실행합니다.
+   - 학습이 완료되면 `p.._d..._model.pth` 같은 이름의 가중치 파일이 생성됩니다.
+
+2. **모델 평가**
+   - `eval/` 디렉토리에서 평가 스크립트를 실행합니다.
+   - 원하는 이미지를 입력으로 넣으면, 저장된 가중치를 이용해 결과를 예측합니다.
+
+3. 🎉 **결과 확인**
+   - 평가가 끝나면 이미지에 대한 예측 결과가 출력됩니다.
